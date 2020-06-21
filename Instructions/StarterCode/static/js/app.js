@@ -1,44 +1,9 @@
 // Fetch the JSON data and console log it
-const config = require('./samples.json')
+let myRequest = new Request ("../samples.json");
 
-
-const data = { miche: 'samples' };
-
-fetch('https://samples.com/profile', {
-  method: 'POST', // or 'PUT'
-  headers: {
-    'Content-Type': 'application/json',
-  },
-  body: JSON.stringify(data),
-})
-.then(response => response.json())
-.then(data => {
-  console.log('Success:', data);
-})
-.catch((error) => {
-  console.error('Error:', error);
+d3.json(myRequest).then((data) => {
+  console.log(data)
 });
-
-
-
-
-
-
-
-// let myRequest = new Request ("samples.json");
-
-// // fetch(myRequest)
-// //   .then(function(response){
-// //     return response.json();
-// //   })
-// //   .then (function(myData){
-// //     console.log(myData);
-// //   });
-
-
-// d3.json(myRequest).then((data) => {
-//   console.log(data)
-// });
 
 
 
